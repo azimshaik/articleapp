@@ -13,16 +13,16 @@ To avoid redundancy use layout with "block content"
 
 `npm install -g nodemon`
 
-#MongoDB
+### MongoDB
 ```
 show dbs
 use articledb (creates a new database or uses a an exiting db)
 db.createCollection('articles');
 db.articles.insert({title:"Article One", author:"Azim Shaik", body:"First ever article"});
 ```
-#Mongoose
+### Mongoose
 `npm install --save mongoose`
-#Model Setup
+### Model Setup
 Create a folder `models` and `article.js` inside the folder. Define the aritcle schema and export
 `let Article = (module.exports = mongoose.model("Article", articleSchema));`
 Bring model into app.sj
@@ -42,5 +42,4 @@ db.once("open", function() {
 db.on("error", function(err) {
   console.log(err);
 });
-
 ```
