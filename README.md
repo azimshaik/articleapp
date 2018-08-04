@@ -43,3 +43,12 @@ db.on("error", function(err) {
   console.log(err);
 });
 ```
+### Bower for front end packaging
+`npm install -g bower`
+`bower install bootstrap`
+Create a .bowerrc file as
+```
+{
+    "directory": "public/bowercomponents"
+}
+```
