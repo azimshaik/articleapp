@@ -1,0 +1,26 @@
+{
+  "name": "articleapp",
+  "version": "1.0.0",
+  "description": "simple article app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimshaik/articleapp.git"
+  },
+  "keywords": [
+    "article",
+    "mongo",
+    "nodejs",
+    "express",
+    "mongoose"
+  ],
+  "author": "Azim Shaik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azimshaik/articleapp/issues"
+  },
+  "homepage": "https://github.com/azimshaik/articleapp#readme"
+}
