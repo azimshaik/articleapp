@@ -1,32 +1,42 @@
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose");
+
+//MongoDB Conenction
+mongoose.connect("mongodb://localhost/articledb");
+let db = mongoose.connection;
+
+//check connection
+db.once("open", function() {
+  console.log("👍 Connected to mongodb💪");
+});
+
+//check for db errors
+db.on("error", function(err) {
+  console.log(err);
+});
 
 // init app
 const app = express();
+//Bring in models
+let Article = require("./models/article");
 
 //load view engine **imp
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 //home route
+//we are passing from the function (from query ) and passing it to the view
 app.get("/", function(req, res) {
-  let articles = [
-    {
-      id: 1,
-      title: "Article One",
-      author: "Azim Shaik",
-      body: "This is Article one"
-    },
-    {
-      id: 2,
-      title: "Aricle two",
-      author: "Abid Shaik",
-      body: "This is article 2"
+  Article.find({}, function(err, articles) {
+    if (err) {
+      console.log("error");
+    } else {
+      res.render("index", {
+        title: "Azim",
+        articles: articles
+      });
     }
-  ];
-  res.render("index", {
-    title: "Azim",
-    articles: articles
   });
 });
 
