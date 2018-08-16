@@ -79,4 +79,8 @@ app.post("/articles/add", function(req, res) {
   });
 });
 
+//add spider route
+app.get("/spider", function(req, res) {
+  res.render("add_spider");
+});
 app.listen("3000", () => console.log("article app running at 3000"));
