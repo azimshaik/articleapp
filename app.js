@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 //MongoDB Conenction
-mongoose.connect("mongodb://localhost/articledb");
+mongoose.connect("mongodb://mongo:27017/articledb");
 let db = mongoose.connection;
 
 //check connection
